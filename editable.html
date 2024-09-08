@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    <title>Dynamic Resume Builder</title>
+    <link rel="stylesheet" href="editable.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <button id="backButton">Back</button>
+            <button id="darkModeToggle">Toggle Dark Mode</button>
+        </header>
+        <h1>Dynamic Resume Builder</h1>
+
+        <form id="resumeForm">
+            <div class="form-section">
+                <h2>Personal Information</h2>
+                <label for="name">Name:</label>
+                <input type="text" id="name" required>
+                <label for="email">Email:</label>
+                <input type="email" id="email" required>
+            </div>
+
+            <div id="educationSection" class="form-section">
+                <h2>Education</h2>
+                <div class="education-entry">
+                    <label for="degree1">Degree:</label>
+                    <input type="text" id="degree1" required>
+                    <label for="institution1">Institution:</label>
+                    <input type="text" id="institution1" required>
+                </div>
+                <button type="button" id="addEducation">Add More Education</button>
+            </div>
+
+            <div id="workExperienceSection" class="form-section">
+                <h2>Work Experience</h2>
+                <div class="work-experience-entry">
+                    <label for="jobTitle1">Job Title:</label>
+                    <input type="text" id="jobTitle1" required>
+                    <label for="company1">Company:</label>
+                    <input type="text" id="company1" required>
+                    <label for="duration1">Duration:</label>
+                    <input type="text" id="duration1" required>
+                </div>
+                <button type="button" id="addWorkExperience">Add More Work Experience</button>
+            </div>
+
+            <div id="skillsSection" class="form-section">
+                <h2>Skills</h2>
+                <div class="skills-entry">
+                    <input type="text" id="skill1" placeholder="Skill" required>
+                </div>
+                <button type="button" id="addSkill">Add More Skills</button>
+            </div>
+
+            <button type="submit">Generate Resume</button>
+        </form>
+
+        <button id="downloadButton">Download Resume as PDF</button>
+        
+        <div id="resume" class="resume"></div>
+    </div>
+
+    <script src="editable.js"></script>
+</body>
+</html>
